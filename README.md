@@ -57,7 +57,9 @@ Note: Adjust the yml file in the config_exp path according to your GPU settings,
 `python scan.py --config_env configs/env.yml --config_exp configs/scan/scan_cifar10.yml --gpus 0 (--seed 1234)`.
 
 4. To visualize the top k images, set the `--visualize_prototypes` flag. For example, on CIFAR-10:
+   
 `python eval.py --config_exp configs/scan/scan_cifar10.yml --model $MODEL_PATH --visualize_prototypes`.
+
 The command for replication is: `python eval.py --config_exp configs/scan/scan_cifar10.yml --model /root/NNM/Trained_Models/cifar10.pth.tar --visualize_prototypes`.
 
 ## Result Images
