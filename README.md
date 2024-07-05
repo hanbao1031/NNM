@@ -80,5 +80,6 @@ However, due to issues in SCAN, self-label is not suitable for NNM. Thus, we rem
 ```
 
 ## Reference
+<img src="111.jpg" width="800" />
 
 SpCL (https://github.com/yxgeee/SpCL)
