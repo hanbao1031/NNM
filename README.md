@@ -1,6 +1,6 @@
 # NNM: Nearest Neighbor Matching for Deep Clustering.
-# NNM: 通过最近邻匹配进行深度聚类
-原github链接：https://github.com/ZhiyuanDang/NNM/blob/main/README.md
+# NNM: Nearest Neighbor Matching for Deep Clustering.
+GitHub link：https://github.com/ZhiyuanDang/NNM/blob/main/README.md
 
 # Introduction
 
@@ -20,9 +20,6 @@ Global Nearest Neighbor Matching
 
 For specifical loss, please refer [paper](./dzy-CVPR2021-NNM-final.pdf) and [poster](./4001-poster.pdf).
 
-# Main Results
-<img src="images/results.jpg" width="800" />
-
 # Pre-Trained Models
 |  Models    | Links |
 |  ----   | ---- |
@@ -37,47 +34,29 @@ For specifical loss, please refer [paper](./dzy-CVPR2021-NNM-final.pdf) and [pos
 | CIFAR-20  | 0.4773 | [Google Drive](https://drive.google.com/file/d/1-kqS3Myrw6S1Y9O0kjsHB3kiCv1_d-yw/view?usp=sharing) |
 | STL-10  | 0.8084 | [Google Drive](https://drive.google.com/file/d/1aC4aKkoRO2kKAQv1COYcucqRcZ6rdk59/view?usp=sharing) |
 
-
-
 # Run
 ## Requirements
-Python 3.7 and Pytorch 1.4.0 are required. Please refer to [requirements.yaml](./requirements.yaml) for more details.
+Python 3.7 and Pytorch 1.4.0 are required. Please refer to requirements.txt for more details.
 ## Usages
 
-Clone this repo: `git clone https://github.com/ZhiyuanDang/NNM.git`.
+1. Clone this repository: `git clone https://github.com/ZhiyuanDang/NNM.git`.
+   Navigate to the directory: `cd NNM`.
 
-Download datasets: [CIFAR-10/100](https://www.cs.toronto.edu/~kriz/cifar.html), [STL-10](http://ai.stanford.edu/~acoates/stl10/).
+Supported datasets: [CIFAR-10/100], [STL-10].
 
-We can directly use the pre-text model from [SCAN](https://github.com/wvangansbeke/Unsupervised-Classification). Then, we only need to generate the neighbors by the code 
+Note: Adjust the yml file in the config_exp path according to your GPU settings, specifically the `batch_size`.
 
-`python simclr.py --config_env configs/env.yml --config_exp configs/pretext/simclr_cifar10.yml`. 
+2. You can directly use the pre-trained models from [SCAN](https://github.com/wvangansbeke/Unsupervised-Classification). Then, generate the features with the following code (for CIFAR-10):
 
-Next, we run the clustering step (optional): 
+`python simclr.py --config_env configs/env.yml --config_exp configs/pretext/simclr_cifar10.yml`.
+
+3. Next, run the clustering step (optional): 
 
 `python scan.py --config_env configs/env.yml --config_exp configs/scan/scan_cifar10.yml --gpus 0 (--seed 1234)`.
 
-Visualizing the top-k images is easily done by setting the `--visualize_prototypes` flag. 
-
-For example on cifar-10:
+4. To visualize the top k images, set the `--visualize_prototypes` flag. For example, on CIFAR-10:
 `python eval.py --config_exp configs/scan/scan_cifar10.yml --model $MODEL_PATH --visualize_prototypes`.
-
-And the Top-3 images is:
-<img src="images/protype-cifar10.jpg" width="800" />
-
-However, due to issues in SCAN, self-label is not suitable for NNM. Thus, we remove this file.
-
-
-# Citation
-```
-@InProceedings{Dang_2021_CVPR,
-    author    = {Dang, Zhiyuan and Deng, Cheng and Yang, Xu and Wei, Kun and Huang, Heng},
-    title     = {Nearest Neighbor Matching for Deep Clustering},
-    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-    month     = {June},
-    year      = {2021},
-    pages     = {13693-13702}
-}
-```
+The command for replication is: `python eval.py --config_exp configs/scan/scan_cifar10.yml --model /root/NNM/Trained_Models/cifar10.pth.tar --visualize_prototypes`.
 
 ## Reference
 <img src="1111.png" width="800" />
