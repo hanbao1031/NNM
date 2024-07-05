@@ -1,6 +1,6 @@
 # NNM: Nearest Neighbor Matching for Deep Clustering.
 # NNM: 通过最近邻匹配进行深度聚类
-Forked from SCAN (https://github.com/wvangansbeke/Unsupervised-Classification).
+原github链接：https://github.com/ZhiyuanDang/NNM/blob/main/README.md
 
 # Introduction
 
