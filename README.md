@@ -1,5 +1,6 @@
 # NNM Replication
 NNM: Nearest Neighbor Matching for Deep Clustering.
+
 GitHub link：https://github.com/ZhiyuanDang/NNM/blob/main/README.md
 
 # Introduction
@@ -59,7 +60,10 @@ Note: Adjust the yml file in the config_exp path according to your GPU settings,
 `python eval.py --config_exp configs/scan/scan_cifar10.yml --model $MODEL_PATH --visualize_prototypes`.
 The command for replication is: `python eval.py --config_exp configs/scan/scan_cifar10.yml --model /root/NNM/Trained_Models/cifar10.pth.tar --visualize_prototypes`.
 
-## Reference
+## Result Images
+
+Due to the lack of a graphical interface on the cloud server, we will save all the reproduced result images in a folder.
+
 <img src="1111.png" width="800" />
 
-SpCL (https://github.com/yxgeee/SpCL)
+
