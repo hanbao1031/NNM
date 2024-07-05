@@ -1,5 +1,5 @@
-# NNM: Nearest Neighbor Matching for Deep Clustering.
-# NNM: Nearest Neighbor Matching for Deep Clustering.
+# NNM Replication
+NNM: Nearest Neighbor Matching for Deep Clustering.
 GitHub link：https://github.com/ZhiyuanDang/NNM/blob/main/README.md
 
 # Introduction
@@ -40,7 +40,8 @@ Python 3.7 and Pytorch 1.4.0 are required. Please refer to requirements.txt for 
 ## Usages
 
 1. Clone this repository: `git clone https://github.com/ZhiyuanDang/NNM.git`.
-   Navigate to the directory: `cd NNM`.
+
+Navigate to the directory: `cd NNM`.
 
 Supported datasets: [CIFAR-10/100], [STL-10].
 
